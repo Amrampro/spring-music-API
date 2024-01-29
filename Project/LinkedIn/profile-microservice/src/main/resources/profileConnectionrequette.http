@@ -1,0 +1,26 @@
+# Create a new connection
+POST http://localhost:8080/api/profile_connections
+Content-Type: application/json
+
+{
+  "profile1_id": 1,
+  "profile2_id": 2
+}
+
+### Read all connections
+GET http://localhost:8082/api/profile_connections
+
+### Read a single connection by ID
+GET http://localhost:8082/api/profile_connections/1
+
+### Update a connection by ID
+PUT http://localhost:8082/api/profile_connections/1
+Content-Type: application/json
+
+{
+"profile1_id": 1,
+"profile2_id": 3
+}
+
+### Delete a connection by ID
+DELETE http://localhost:8082/api/profile_connections/1

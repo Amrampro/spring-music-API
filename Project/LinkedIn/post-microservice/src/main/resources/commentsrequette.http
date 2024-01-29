@@ -1,0 +1,30 @@
+# Create a new comment
+POST http://localhost:8083/api/comments
+Content-Type: application/json
+
+{
+  "post_id": 1,
+  "profile_id": 2,
+  "content": "This is a sample comment.",
+  "creation_date": "2024-01-15T12:00:00"
+}
+
+### Read all comments
+GET http://localhost:8083/api/comments
+
+### Read a single comment by ID
+GET http://localhost:8083/api/comments/1
+
+### Update a comment by ID
+PUT http://localhost:8083/api/comments/1
+Content-Type: application/json
+
+{
+"post_id": 1,
+"profile_id": 2,
+"content": "This is an updated comment.",
+"creation_date": "2024-01-16T12:00:00"
+}
+
+### Delete a comment by ID
+DELETE http://localhost:8083/api/comments/1

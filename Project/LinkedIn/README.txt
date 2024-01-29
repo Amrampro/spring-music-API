@@ -1,0 +1,1 @@
+This project is that of LinkedIn microservices using 3 services (User-service, Profile-service, Post-service)

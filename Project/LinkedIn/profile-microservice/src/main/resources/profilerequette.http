@@ -1,0 +1,36 @@
+# Create a new profile
+POST http://localhost:8082/api/profiles
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "current_job_title": "Software Engineer",
+  "industry": "Information Technology",
+  "summary": "Experienced software engineer with a passion for coding.",
+  "headline": "Full Stack Developer",
+  "website": "https://www.example.com",
+  "open_for_work": 1
+}
+
+### Read all profiles
+GET http://localhost:8082/api/profiles
+
+### Read a single profile by ID
+GET http://localhost:8082/api/profiles/1
+
+### Update a profile by ID
+PUT http://localhost:8082/api/profiles/1
+Content-Type: application/json
+
+{
+"user_id": 1,
+"current_job_title": "Senior Software Engineer",
+"industry": "Information Technology",
+"summary": "Senior software engineer specializing in Java and Spring.",
+"headline": "Senior Full Stack Developer",
+"website": "https://www.example.com",
+"open_for_work": 0
+}
+
+### Delete a profile by ID
+DELETE http://localhost:8082/api/profiles/1

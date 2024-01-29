@@ -1,0 +1,51 @@
+
+## Create a new user
+POST http://localhost:8081/api/users
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "first_name": "John",
+  "last_name": "Doe",
+  "password": "password123",
+  "email": "john.doe@example.com",
+  "birth_date": "1990-01-01",
+  "registration_date": "2024-01-01T12:00:00",
+  "last_login_date": "2024-01-01T12:00:00",
+  "age": 35
+}
+
+### Read all users
+GET http://localhost:8081/api/users
+
+### Read a single user by ID
+GET http://localhost:8081/api/users/1
+
+### Update a user by ID
+PUT http://localhost:8081/api/users/1
+Content-Type: application/json
+
+{
+"username": "updated_john_doe",
+"first_name": "Updated John",
+"last_name": "Updated Doe",
+"password": "updated_password123",
+"email": "updated_john.doe@example.com",
+"birth_date": "1990-01-01",
+"registration_date": "2024-01-01T12:00:00",
+"last_login_date": "2024-01-01T12:00:00",
+"age": 12
+}
+
+### Delete a user by ID
+DELETE http://localhost:8081/api/users/1
+
+### Authenticate a user
+POST http://localhost:8081/api/users/authenticate
+Content-Type: application/json
+
+{
+"username": "Jeaniol",
+"password": "password123"
+}
+

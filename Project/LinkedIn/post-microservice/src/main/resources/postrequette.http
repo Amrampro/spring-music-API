@@ -1,0 +1,30 @@
+# Create a new post
+POST http://localhost:8083/api/posts
+Content-Type: application/json
+
+{
+  "profile_id": 1,
+  "title": "Sample Post",
+  "content": "This is the content of the sample post.",
+  "creation_date": "2024-01-10T12:00:00"
+}
+
+### Read all posts
+GET http://localhost:8083/api/posts
+
+### Read a single post by ID
+GET http://localhost:8083/api/posts/1
+
+### Update a post by ID
+PUT http://localhost:8083/api/posts/1
+Content-Type: application/json
+
+{
+"profile_id": 1,
+"title": "Updated Post",
+"content": "This is the updated content of the post.",
+"creation_date": "2024-01-11T12:00:00"
+}
+
+### Delete a post by ID
+DELETE http://localhost:8083/api/posts/1

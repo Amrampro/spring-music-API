@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://user-service:3306/db-user
+    depends_on:
+      - user-service-db
+
+  profile-microservice:
+    build:
+      context: ./profile-microservice
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://profile-microservice:3306/db-post
+    depends_on:
+      - profile-service-db
+
+  post-microservice:
+    build:
+      context: ./post-microservice
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://post-microservice:3306/db-post
+    depends_on:
+      - post-service-db
+
+  user-service-db:
+    image: mariadb:latest
+    ports:
+      - "3316:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: db-user
+
+  profile-service-db:
+    image: mariadb:latest
+    ports:
+      - "3317:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: db-profile
+
+  post-service-db:
+    image: mariadb:latest
+    ports:
+      - "3318:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: db-post
